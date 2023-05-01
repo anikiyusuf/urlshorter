@@ -3,7 +3,7 @@ const express =  require("express")
 const ShortUrl = require('./model/urlShorter')
 const { connectionMongoDB  } = require("./db")
 const app = express()
-PORT = process.env.PORT
+PORT = process.env.PORT || 3334
 
 
 connectionMongoDB()
@@ -36,6 +36,6 @@ app.get('/:shortUrl', async (req, res) => {
     res.redirect(shortUrl.full)
   })
   
-app.listen(PORT, () => {
-    console.log(`server running on localhost:${PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`server running on localhost:${process.env.PORT}`)
 })
