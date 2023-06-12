@@ -1,17 +1,17 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-
+const logger = require("./logger/logger")
 const MONGODB = process.env.MONGODB
 
 function  connectionMongoDB(){
     mongoose.connect(MONGODB)
 
     mongoose.connection.on('connected', () =>{
-        console.log('connection to mongodb successful')
+        logger.info('connection to mongodb successful')
     })
 
     mongoose.connection.on('err', (err) =>{
-        console.log(err)
+        logger.error(err)
         
     })
 
