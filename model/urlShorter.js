@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 const shortId = require("shortid") 
 
+
+
 const Schema = mongoose.Schema
 const shortUrlSchema = new Schema({
     full: {
@@ -17,6 +19,14 @@ const shortUrlSchema = new Schema({
         required: true,
         default: 0
       },
+    createAt : {
+        type:Date,
+        default:Date.now
+    },
+    lastUpdateAt :{
+        type:String,
+        default:Date.now 
+    }
   
 })
 

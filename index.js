@@ -1,8 +1,9 @@
 require('dotenv').config()
 const express =  require("express")
+// const QRCode = require("qrcode-generator")
 const  rateLimit = require('express-rate-limit')
 const router = require('./routes/urlRoutes');
-const logger = require("./logger/logger")
+const logger = require("./logger/logger");
 const { connectionMongoDB  } = require("./db")
 const app = express()
 PORT = process.env.PORT || 3334
@@ -12,6 +13,7 @@ connectionMongoDB()
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
+app.use(express.static('public'))
 
 // RATE liMITING FOR 15 minutes
 const limiter = rateLimit({

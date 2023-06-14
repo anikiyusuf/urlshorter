@@ -4,7 +4,8 @@ const logger = require("./logger/logger")
 const MONGODB = process.env.MONGODB
 
 function  connectionMongoDB(){
-    mongoose.connect(MONGODB)
+    mongoose.connect(MONGODB ,{
+        serverSelectionTimeoutMS: 30000})
 
     mongoose.connection.on('connected', () =>{
         logger.info('connection to mongodb successful')
@@ -16,5 +17,6 @@ function  connectionMongoDB(){
     })
 
 }
+
 
 module.exports =   {connectionMongoDB}
