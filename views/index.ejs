@@ -31,7 +31,7 @@
             <% shortUrls.forEach((shortUrl) => { %>
               <tr>
                 <td><a href="<%= shortUrl.full %>" target="_blank"><%= shortUrl.full %></a></td>
-                <td><a href="<%= shortUrl.short %>" target="_blank"><%= shortUrl.short %></a></td>
+                <td><a href="<%= shortUrl.short %>" target="_blank"><%= shortUrl.short %>.ly</a></td>
                 <td><%= shortUrl.clicks %></td>
                 <td>
                   <a href="/qrcodes/<%= shortUrl.short %>.png" target="_blank" download>

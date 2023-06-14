@@ -65,3 +65,5 @@
 {"level":"info","message":"connection to mongodb successful"}
 {"level":"info","message":"connection to mongodb successful"}
 {"level":"info","message":"connection to mongodb successful"}
+{"level":"info","message":"server running on localhost:3000"}
+{"level":"info","message":"connection to mongodb successful"}
